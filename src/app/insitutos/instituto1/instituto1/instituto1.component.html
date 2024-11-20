@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <h1>{{ centroActual.nombre }}</h1>
+
+  <img [src]="centroActual.logoUrl" alt="logo centro" class="img-fluid mb-3" style="max-width: 150px;">
+
+  <dl>
+    <dt>Centro Educativo:</dt>
+    <dd>{{ centroActual.nombre }}</dd>
+
+    <dt>Localidad:</dt>
+    <dd>{{ centroActual.localidad }}</dd>
+
+    <dt>Familias Profesionales:</dt>
+    <dd>
+      <ul>
+        <li>{{ centroActual.familiasProfesionales[0] }}</li>
+        <li>{{ centroActual.familiasProfesionales[1] }}</li>
+      </ul>
+    </dd>
+
+  </dl>
+
+  <button class="btn btn-primary" (click)="cambiarCentro()">Cambiar Centro</button>
+</div>

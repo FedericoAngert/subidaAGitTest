@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <h1 class="text-center">Gestión de Centros</h1>
+
+  <!-- Información del centro actual -->
+  <div *ngIf="centroActual; else noCentros" class="text-center">
+    <h2>{{ centroActual.nombre }}</h2>
+    <p><strong>Localidad:</strong> {{ centroActual.localidad }}</p>
+  </div>
+
+  <ng-template #noCentros>
+    <h3 class="text-center text-danger">No hay centros en el listado</h3>
+  </ng-template>
+
+  <!-- Botones -->
+  <div class="d-flex justify-content-center mt-3">
+    <button class="btn btn-primary mx-2" (click)="moverAnterior()" [disabled]="posicionActual === 0">
+      &lt; Anterior
+    </button>
+    <button class="btn btn-danger mx-2" (click)="eliminarCentro()" [disabled]="!centroActual">
+      X Eliminar
+    </button>
+    <button class="btn btn-warning mx-2" (click)="insertarCentro()" [disabled]="pilaEliminados.length === 0">
+      O Insertar
+    </button>
+    <button class="btn btn-primary mx-2" (click)="moverPosterior()" [disabled]="posicionActual === centros.length - 1">
+      Posterior &gt;
+    </button>
+  </div>
+
+  <!-- Información de posición -->
+  <div class="text-center mt-3">
+    <p><strong>Posición actual:</strong> {{ posicionActual + 1 }} / {{ centros.length }}</p>
+  </div>
+
+  <!-- Pila de eliminados -->
+  <div class="text-center mt-4">
+    <h3>Pila de Eliminados</h3>
+    <ul>
+      <li *ngFor="let eliminado of pilaEliminados">{{ eliminado.nombre }}</li>
+    </ul>
+  </div>
+</div>
