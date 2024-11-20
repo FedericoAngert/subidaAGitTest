@@ -10,7 +10,7 @@ import { HeroeComponent } from './heroes/heroe/heroe/heroe.component';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [Instituto1Component, Instituto2Component, HeroeComponent],
+  // imports: [Instituto1Component, Instituto2Component, HeroeComponent],
 })
 export class AppComponent {
 
