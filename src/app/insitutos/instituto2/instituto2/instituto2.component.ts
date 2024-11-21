@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-instituto2',
-  standalone: true,
-  imports: [CommonModule],
+  standalone: false,
   templateUrl: './instituto2.component.html',
   styleUrl: './instituto2.component.css'
 })

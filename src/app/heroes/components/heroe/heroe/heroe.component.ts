@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-heroe',
-  standalone: true,
-  imports: [],
+  standalone: false,
   templateUrl: './heroe.component.html',
   styleUrl: './heroe.component.css'
 })
